@@ -7,6 +7,11 @@
     <title>File Crypto Tool</title>
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;600;800&display=swap"
         rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Double+Ink:wght@100..900&display=swap"
+        rel="stylesheet">
+
     <style>
         *,
         *::before,
@@ -18,7 +23,8 @@
 
         :root {
             --bg: #0a0b0f;
-            --surface: #111318;
+            /* --surface: #111318; */
+            --surface: #171a22;
             --border: #1f2230;
             --border-hl: #2e3350;
             --accent: #00e5ff;
@@ -63,8 +69,11 @@
         }
 
         .logo-line {
-            font-family: var(--mono);
-            font-size: 11px;
+            font-family: "Bitcount Prop Double Ink", system-ui;
+            font-optical-sizing: auto;
+            font-style: normal;
+            /* font-family: var(--mono); */
+            font-size: 15px;
             letter-spacing: 4px;
             color: var(--accent);
             text-transform: uppercase;
@@ -113,6 +122,7 @@
 
         .panel {
             background: var(--surface);
+            /* background-color: rgb(0, 0, 0); */
             border: 1px solid var(--border);
             border-radius: 16px;
             padding: 32px;
@@ -166,7 +176,8 @@
         }
 
         .panel-title {
-            font-size: 18px;
+
+            font-size: 19px;
             font-weight: 600;
         }
 
@@ -178,8 +189,10 @@
             color: var(--accent2);
         }
 
+
         .panel-desc {
-            font-family: var(--mono);
+
+            /* font-family: var(--mono); */
             font-size: 11px;
             color: var(--muted);
             letter-spacing: 1px;
@@ -203,7 +216,8 @@
         input[type="text"],
         textarea {
             background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border);
+            /* border: 1px solid var(--border); */
+            border: #434445 1px solid;
             border-radius: 8px;
             color: var(--text);
             font-family: var(--mono);
@@ -233,7 +247,9 @@
 
         /* File drop zone */
         .dropzone {
-            border: 1.5px dashed var(--border);
+            /* border: 1.5px dashed var(--border); */
+            border: #45504e 1px solid;
+
             border-radius: 10px;
             padding: 24px 16px;
             text-align: center;
@@ -502,7 +518,7 @@
 <body>
 
     <header>
-        <div class="logo-line">// secure file utility</div>
+        <div class="logo-line">// secure file utility \\</div>
         <h1>File Crypto Tool</h1>
         <p class="subtitle">RSA · OAEP · AES encryption pipeline</p>
     </header>
@@ -601,7 +617,7 @@
 
     </div>
 
-    <footer>// SoKmean's System to Test Api Encryption.@2026</footer>
+    <footer>// Sokmean's System to Test Api Encryption.@2026</footer>
 
     <script>
         // ─── CONFIG ────────────────────────────────────────────────────────
@@ -705,7 +721,7 @@
                 document.getElementById('encKey').textContent = data.encryptedKey || '';
 
                 // Set download button
-                const fileUrl = data.encryptedFile_link || '';
+                const fileUrl = data.encryptedFileLink || '';
                 const dlBtn = document.getElementById('encDownloadLink');
                 dlBtn.href = '#';
                 dlBtn.onclick = async (e) => {
